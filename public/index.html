@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Agenda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Banner Superior Corporativo -->
+        <div class="banner">
+            <img src="img/banner.png" alt="Banner Agenda">
+        </div>
+
+        <!-- Título Principal da Aplicação -->
+        <div class="header-title">
+            <img src="img/agenda.png" alt="Ícone Agenda">
+            <h1>Agenda de Tarefas e Reuniões</h1>
+        </div>
+
+        <!-- Estrutura Dinâmica em Duas Colunas (Dashboard) -->
+        <div class="main-grid">
+            
+            <!-- Coluna Esquerda: Formulário de Registo -->
+            <div class="form-container">
+                <h2>
+                    <img src="img/lapis.png" alt="Ícone Lápis" style="width: 22px; height: 22px; vertical-align: middle; margin-right: 8px;">
+                    Nova Tarefa / Reunião
+                </h2>
+                <form id="task-form">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" name="titulo" required placeholder="Ex: Reunião de projeto">
+
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" name="descricao" rows="3" placeholder="Detalhes da tarefa..."></textarea>
+
+                    <label for="data">Data e Hora</label>
+                    <input type="datetime-local" id="data" name="data" required>
+
+                    <label for="estado">Estado</label>
+                    <select id="estado" name="estado">
+                        <option value="Pendente">Pendente</option>
+                        <option value="Em Andamento">Em Andamento</option>
+                        <option value="Concluído">Concluído</option>
+                    </select>
+
+                    <button type="submit">Salvar Tarefa</button>
+                </form>
+            </div>
+
+            <!-- Coluna Direita: Tabela de Listado -->
+            <div class="table-container">
+                <h2>
+                    <img src="img/lista.png" alt="Ícone Lista" style="width: 22px; height: 22px; vertical-align: middle; margin-right: 8px;">
+                    Lista de Tarefas e Reuniões
+                </h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estado</th>
+                            <th>Título</th>
+                            <th>Descrição</th>
+                            <th>Data</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="task-table-body">
+                        <!-- Os dados do SQLite serão injetados dinamicamente aqui via script.js -->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
